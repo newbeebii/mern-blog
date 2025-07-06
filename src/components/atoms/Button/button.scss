@@ -1,16 +1,17 @@
-.button{
-  padding: 12px;
-  font-size: 16px;
-  background-color: #2196F3;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 12px;
-  color: white;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.button:hover {
-  background-color: #0b7dda;
-}
+  .button{
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #2196F3;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .button:hover {
+    background-color: #0b7dda;
+  }
