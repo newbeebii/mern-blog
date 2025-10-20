@@ -1,8 +1,10 @@
 import React from "react";
 import { Button, Gap, Input, Link } from "../../components";
 import { LoginBg } from "../../assets";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className="main-page">
       <div className="left">
@@ -15,10 +17,10 @@ const Login = () => {
         <Input label="Password" placeholder="Password" />
         <Gap height={20} />
         <div className="button-wrapper">
-          <Button title="Login" />
+          <Button title="Login" onClick={() => navigate("/")} />
         </div>
         <Gap height={130} />
-        <Link title="Sign Up ?" />
+        <Link title="Sign Up ?" onClick={() => navigate("/register")} />
       </div>
     </div>
   );

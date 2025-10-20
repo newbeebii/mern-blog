@@ -1,8 +1,11 @@
 import React from "react";
 import { RegisterBg } from "../../assets";
 import "./detailBlog.scss";
+import { useNavigate } from "react-router-dom";
+import { Gap, Link } from "../../components";
 
 const DetailBlog = () => {
+  const navigate = useNavigate();
   return (
     <div className="detail-blog-wrapper">
       <img className="img-cover" src={RegisterBg} alt="" />
@@ -20,6 +23,8 @@ const DetailBlog = () => {
         omnis non nihil nemo ratione maxime dolor quasi, ipsam quaerat? Culpa,
         assumenda dolorum!
       </p>
+      <Gap height={20} />
+      <Link title="Kembali Ke Home" onClick={() => navigate("/")} />
     </div>
   );
 };
