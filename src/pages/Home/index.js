@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BlogItem, Button, Gap } from "../../components";
 import "./home.scss";
 import { useNavigate } from "react-router";
+import axios from "axios";
 
 const Home = () => {
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/v1/blog/posts")
+      .then((result) => {
+        console.log(result.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   const navigate = useNavigate();
   return (
     <div className="home-page-wrapper">
