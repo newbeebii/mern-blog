@@ -1,2 +1,3 @@
 import Routes from "./Routes";
-export { Routes };
+import store from "./redux/store";
+export { Routes, store };

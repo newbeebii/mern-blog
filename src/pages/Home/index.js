@@ -3,9 +3,13 @@ import { BlogItem, Button, Gap } from "../../components";
 import "./home.scss";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const [dataBlog, setDataBlog] = useState([]);
+  const stateGlobal = useSelector((state) => state);
+  console.log("state global: ", stateGlobal);
+
   useEffect(() => {
     axios
       .get("http://localhost:4000/v1/blog/posts?page=2&perPage=2")
