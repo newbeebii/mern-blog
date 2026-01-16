@@ -1,8 +1,9 @@
-import { configureStore, applyMiddleware } from "@reduxjs/toolkit";
-import { thunk } from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+import reducer from "./reducer/reducer";
 
-import reducer from "./reducer/reducer.js";
-
-const store = configureStore(reducer, applyMiddleware(thunk));
+const store = configureStore({
+  reducer: reducer,
+  // thunk sudah otomatis, TIDAK perlu applyMiddleware
+});
 
 export default store;
