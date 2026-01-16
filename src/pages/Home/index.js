@@ -4,6 +4,7 @@ import "./home.scss";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
+import { setDataBlog } from "../../config/redux/actions";
 
 const Home = () => {
   const { dataBlog } = useSelector((state) => state.home);
@@ -12,17 +13,7 @@ const Home = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/v1/blog/posts?page=2&perPage=2")
-      .then((result) => {
-        console.log("API result:", result.data); // <= LIHAT INI DI CONSOLE
-        const responseAPI = result.data;
-
-        dispatch({ type: "UPDATE_DATA_BLOG", payload: responseAPI.data });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(setDataBlog());
   }, [dispatch]);
   const navigate = useNavigate();
 
